@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
-require "hub/milestone"
+require "hub-milestone"
+HubMilestone::CLI.start

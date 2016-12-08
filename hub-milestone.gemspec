@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hub/milestone/version'
+require 'hub-milestone/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "hub-milestone"
-  spec.version       = Hub::Milestone::VERSION
+  spec.version       = HubMilestone::VERSION
   spec.authors       = ["Hiroki Akiyama"]
   spec.email         = ["akiyama@akiroom.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = 'easy milestones operator for Github'
+  spec.description   = 'easy milestones operator for Github'
+  spec.homepage      = 'https://github.com/akiroom/hub-milestone'
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -29,6 +29,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_dependency  "octokit", "~> 4.0"
+  spec.add_dependency  "slop", "~> 4.0"
+  spec.add_dependency  "thor"
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
